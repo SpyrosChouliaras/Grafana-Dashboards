@@ -23,4 +23,12 @@ Use the IP addrees to on the **Redis Application** plugin to monitor Redis datab
 
 e.g., **Address : 172.17.0.3:6379**
 
+## Spin up MongoDB container using docker
 
+```sh
+```
+
+
+## Install YCSB to benchmark Redis and MongoDB 
+
+See **Prometheus** repository
