@@ -39,6 +39,8 @@ See step-by-step installation under **Prometheus** repository
 ## Load and Run YCSB workload 
 
 
+# On Redis
+
 ```sh
 ./bin/ycsb load redis -s -P workloads/workloada -p "redis.host=172.17.0.3" -p "redis.port=6379" > outputLoad.txt
 ```
@@ -47,5 +49,18 @@ See step-by-step installation under **Prometheus** repository
 ```sh
 ./bin/ycsb run redis -s -P workloads/workloada -p "redis.host=172.17.0.3" -p "redis.port=6379" -p status.interval=1 > outputRun.txt
 ```
+
+# On MongoDB
+
+
+```sh
+./bin/ycsb load redis -s -P workloads/workloada -p "port=27017" 
+```
+
+
+```sh
+./bin/ycsb run redis -s -P workloads/workloada -p "port=27017" -p status.interval=1 > outputRun.txt
+```
+
 
 
