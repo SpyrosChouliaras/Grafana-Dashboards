@@ -40,7 +40,7 @@ See step-by-step installation under **Prometheus** repository
 
 
 ```sh
-./bin/ycsb load redis -s -P workloads/workloada -p  "redis.host=172.17.0.3" -p "redis.port=6379" > outputLoad.txt
+./bin/ycsb load redis -s -P workloads/workloada -p "redis.host=172.17.0.3" -p "redis.port=6379" > outputLoad.txt
 ```
 
 
