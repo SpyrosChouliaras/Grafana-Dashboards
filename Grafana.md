@@ -31,4 +31,4 @@ e.g., **Address : 172.17.0.3:6379**
 
 ## Install YCSB to benchmark Redis and MongoDB 
 
-See **Prometheus** repository
+See step-by-step installation under **Prometheus** repository
