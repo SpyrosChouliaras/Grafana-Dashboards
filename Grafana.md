@@ -26,9 +26,24 @@ e.g., **Address : 172.17.0.3:6379**
 ## Spin up MongoDB container using docker
 
 ```sh
+docker run --name mongodb bitnami/mongodb:latest
 ```
 
 
 ## Install YCSB to benchmark Redis and MongoDB 
 
 See step-by-step installation under **Prometheus** repository
+
+## Load and Run YCSB workload 
+
+
+```sh
+./bin/ycsb load redis -s -P workloads/workloada -p  "redis.host=172.17.0.3" -p "redis.port=6379" > outputLoad.txt
+```
+
+
+```sh
+./bin/ycsb run redis -s -P workloads/workloada -p "redis.host=172.17.0.3" -p "redis.port=6379" -p status.interval=1 > outputRun.txt
+```
+
+
