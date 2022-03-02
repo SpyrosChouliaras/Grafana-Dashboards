@@ -25,6 +25,8 @@ e.g., **Address : 172.17.0.3:6379**
 
 ## Spin up MongoDB container using docker
 
+Execute the command below to spin MongoDB container at port 27017 using docker
+
 ```sh
 docker run --name mongodb bitnami/mongodb:latest
 ```
