@@ -6,6 +6,8 @@ Execute the command below to spin Grafana container at port 3000 using docker
 docker run -p 3000:3000 --name=grafana -e "GF_INSTALL_PLUGINS=redis-app" grafana/grafana
 ```
 
+# Use Grafana Redis application plugin for monitoring.
+
 ## Spin up Redis container using docker
 
 Execute the command below to spin Redis container at port 6379 using docker
