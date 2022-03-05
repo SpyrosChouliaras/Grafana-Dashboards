@@ -89,11 +89,19 @@ GRUB_CMDLINE_LINUX="cgroup_enable=memory swapaccount=1"
 ```
 Save and close the file.
 
-3)sudo update-grub
+3) Update 
 
-4) sudo reboot
+```sh
+sudo update-grub
+```
 
-Finally deploy your redis container by giving a memory :
+4) Reboot the VM
+
+```sh
+sudo reboot
+```
+
+5) Finally deploy your redis container by giving a memory :
 
 sudo docker run -m=4G-p 6379:6379 --name redis -e ALLOW_EMPTY_PASSWORD=yes bitnami/redis:latest
 
