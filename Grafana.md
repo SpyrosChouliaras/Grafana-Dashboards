@@ -111,7 +111,7 @@ sudo docker run -m=4G-p 6379:6379 --name redis -e ALLOW_EMPTY_PASSWORD=yes bitna
 6) To update the memory use the update command
 
 ```sh
-sudo docker update -m=1024M 
+sudo docker update -m=1024M [ContainerID]
 ```
 
 
