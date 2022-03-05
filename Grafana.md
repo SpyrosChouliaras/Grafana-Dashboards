@@ -64,5 +64,50 @@ See step-by-step installation under **Prometheus** repository
 ./bin/ycsb run redis -s -P workloads/workloada -p "port=27017" -p status.interval=1 > outputRun.txt
 ```
 
+## Use prometheus for monitoring 
+
+Deploy redis exporter with docker
+
+```sh
+./redis_exporter -redis.addr redis://172.17.0.2:6379
+```
+
+Run Prometheus
+
+```sh
+./prometheus
+```
+
+## Scale Redis container resources using docker cgroups
+
+1)Log into the Ubuntu or Debian host as a user with sudo privileges.
+
+2)Edit the /etc/default/grub file. Add or edit the GRUB_CMDLINE_LINUX line to add the following two key-value pairs:
+
+```sh
+GRUB_CMDLINE_LINUX="cgroup_enable=memory swapaccount=1"
+```
+Save and close the file.
+
+3)sudo update-grub
+
+4) sudo reboot
+
+Finally deploy your redis container by giving a memory :
+
+sudo docker run -m=4G-p 6379:6379 --name redis -e ALLOW_EMPTY_PASSWORD=yes bitnami/redis:latest
+
+To update the memory use the update command
+
+```sh
+sudo docker update -m=1024M 
+```
+
+
+
+
+
+
+
 
 
