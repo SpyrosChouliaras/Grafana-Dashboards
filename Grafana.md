@@ -80,9 +80,9 @@ Run Prometheus
 
 # Scale Redis container resources using docker cgroups
 
-- 1) Log into the Ubuntu or Debian host as a user with sudo privileges.
+1) Log into the Ubuntu or Debian host as a user with sudo privileges.
 
-= 2) Edit the /etc/default/grub file. Add or edit the GRUB_CMDLINE_LINUX line to add the following two key-value pairs:
+2) Edit the /etc/default/grub file. Add or edit the GRUB_CMDLINE_LINUX line to add the following two key-value pairs:
 
 ```sh
 GRUB_CMDLINE_LINUX="cgroup_enable=memory swapaccount=1"
