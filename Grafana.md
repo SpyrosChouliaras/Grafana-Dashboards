@@ -101,11 +101,14 @@ sudo update-grub
 sudo reboot
 ```
 
-5) Finally deploy your redis container by giving a memory :
+5) Finally deploy your redis container and specify memory limit:
 
+```sh
 sudo docker run -m=4G-p 6379:6379 --name redis -e ALLOW_EMPTY_PASSWORD=yes bitnami/redis:latest
 
-To update the memory use the update command
+```
+
+6) To update the memory use the update command
 
 ```sh
 sudo docker update -m=1024M 
