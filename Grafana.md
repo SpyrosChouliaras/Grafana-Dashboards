@@ -41,7 +41,7 @@ See step-by-step installation under **Prometheus** repository
 ## Load and Run YCSB workload 
 
 
-# On Redis
+## On Redis
 
 ```sh
 ./bin/ycsb load redis -s -P workloads/workloada -p "redis.host=172.17.0.3" -p "redis.port=6379" > outputLoad.txt
@@ -52,7 +52,7 @@ See step-by-step installation under **Prometheus** repository
 ./bin/ycsb run redis -s -P workloads/workloada -p "redis.host=172.17.0.3" -p "redis.port=6379" -p status.interval=1 > outputRun.txt
 ```
 
-# On MongoDB
+## On MongoDB
 
 
 ```sh
@@ -78,7 +78,7 @@ Run Prometheus
 ./prometheus
 ```
 
-## Scale Redis container resources using docker cgroups
+# Scale Redis container resources using docker cgroups
 
 1)Log into the Ubuntu or Debian host as a user with sudo privileges.
 
