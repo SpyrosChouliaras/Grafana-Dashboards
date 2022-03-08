@@ -31,7 +31,7 @@ This will add exporters (e.g., redis_exporter) and cAdvisor.
 
 For the docker-compose.yml:
 
-```
+```sh
 version: '3.2'
 services:
   prometheus:
@@ -62,22 +62,22 @@ services:
     container_name: redis
     ports:
     - 6379:6379
-```sh
+```
 
 2) Deploy Grafana container:
 
-```
-sudo docker run -p 3000:3000 --name=grafana -e "GF_INSTALL_PLUGINS=redis-app" grafana/grafana
 ```sh
+sudo docker run -p 3000:3000 --name=grafana -e "GF_INSTALL_PLUGINS=redis-app" grafana/grafana
+```
 
 3) Deploy redis-ycsb to execute YCSB workload
 
-```
+```sh
 sudo docker run -m=4G -p 6380:6380 --name redis-ycsb -e ALLOW_EMPTY_PASSWORD=yes bitnami/redis:latest
- ```sh
+ ```
  
 4) Target redis-ycsb with redis_exporter (install and download 
 
-```
-./redis_exporter -redis.addr redis://0.0.0.0:6380 -include-system-metrics=true
 ```sh
+./redis_exporter -redis.addr redis://0.0.0.0:6380 -include-system-metrics=true
+```
