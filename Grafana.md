@@ -98,7 +98,7 @@ Run Prometheus
 
 Go to import -> load 763 (redis exporter dashboard ID) -> Choose prometheus as data source and click import(overwrite).
 
-Finally, you can add customized dashboards based on your requirements. As for example you can add the CPU usage percentage.
+Finally, you can add customized panels based on your requirements. As for example you can add the CPU usage percentage.
 
 Go to add panel, and in Metrics Browser **irate (redis_cpu_user_seconds_total [5s]) * 100**.
 
