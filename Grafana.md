@@ -15,6 +15,7 @@ Execute the command below to spin Redis container at port 6379 using docker
 ```sh
 sudo docker run --name redis -e ALLOW_EMPTY_PASSWORD=yes bitnami/redis:latest
 ```
+
 Inspect the IP address of the Redis system
 
 ```sh
@@ -76,10 +77,10 @@ wget https://github.com/oliver006/redis_exporter/releases/download/v1.18.0/redis
 
 Unzip the tarball and cd into the directory:
 
-``sh
+```sh
 tar xvfz redis_exporter-v1.18.0.linux-amd64.tar.gz
 cd redis_exporter-v1.18.0.linux-amd64
-``
+```
 
 Finally, run the exporter:
 
