@@ -1,7 +1,7 @@
 # Monitoring docker containers with aAdvisor and Grafana
 
 
-1.First create a prometheus.yml and docker-compose.yml files. Edit the files as follows:
+1. First create a prometheus.yml and docker-compose.yml files. Edit the files as follows:
 
 For prometheus.yml:
 
@@ -70,19 +70,19 @@ To run the installation:
 docker-compose up
 ```
 
-2) Deploy Grafana container:
+2. Deploy Grafana container:
 
 ```sh
 sudo docker run -p 3000:3000 --name=grafana -e "GF_INSTALL_PLUGINS=redis-app" grafana/grafana
 ```
 
-3) Deploy redis-ycsb to execute YCSB workload
+3. Deploy redis-ycsb to execute YCSB workload
 
 ```sh
 sudo docker run -m=4G -p 6380:6380 --name redis-ycsb -e ALLOW_EMPTY_PASSWORD=yes bitnami/redis:latest
  ```
  
-4) Target redis-ycsb with redis_exporter (install and download 
+4. Target redis-ycsb with redis_exporter (install and download 
 
 ```sh
 ./redis_exporter -redis.addr redis://0.0.0.0:6380 -include-system-metrics=true
