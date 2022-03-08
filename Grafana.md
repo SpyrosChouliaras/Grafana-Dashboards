@@ -94,7 +94,7 @@ Run Prometheus
 ./prometheus
 ```
 
-## Visit Grafana and import a Redis dashboard instead of Redis application plugin:
+## Visit Grafana and import Redis_exporter dashboard instead of Redis application plugin:
 
 Go to import -> load 763 (redis exporter dashboard ID) -> Choose prometheus as data source and click import(overwrite).
 
