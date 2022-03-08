@@ -5,7 +5,7 @@
 
 For prometheus.yml:
 
-```
+```sh
 global:
   scrape_interval: 1s
   evaluation_interval: 1s
@@ -24,7 +24,8 @@ scrape_configs:
     static_configs:
     - targets:
       - cadvisor:8080
-```sh
+```
+
 
 This will add exporters (e.g., redis_exporter) and cAdvisor.
 
