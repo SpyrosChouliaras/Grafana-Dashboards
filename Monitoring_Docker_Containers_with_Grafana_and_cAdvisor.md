@@ -70,19 +70,25 @@ To run the installation:
 docker-compose up
 ```
 
-2.Target redis-ycsb with redis_exporter (install and download 
+2. Deploy Redis container. This Redis instance will be used to load/run YCSB workload.
 
 ```sh
-./redis_exporter -redis.addr redis://0.0.0.0:6380 -include-system-metrics=true
+sudo docker run -p 6380:6380 --name redis-ycsb -e ALLOW_EMPTY_PASSWORD=yes bitnami/redis:latest
 ```
 
-3.Deploy Grafana container:
+3.Target redis-ycsb with redis_exporter (install and download 
+
+```sh
+./redis_exporter -redis.addr redis://172.17.0.2:6379 -include-system-metrics=true
+```
+
+4.Deploy Grafana container:
 
 ```sh
 sudo docker run -p 3000:3000 --name=grafana -e "GF_INSTALL_PLUGINS=redis-app" grafana/grafana
 ```
 
-4.Deploy redis-ycsb to execute YCSB workload
+5.Deploy redis-ycsb to execute YCSB workload
 
 ```sh
 sudo docker run -m=4G -p 6380:6380 --name redis-ycsb -e ALLOW_EMPTY_PASSWORD=yes bitnami/redis:latest
