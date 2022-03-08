@@ -97,5 +97,10 @@ sudo docker run -p 3000:3000 --name=grafana -e "GF_INSTALL_PLUGINS=redis-app" gr
 ```sh
 sudo docker run -m=4G -p 6380:6380 --name redis-ycsb -e ALLOW_EMPTY_PASSWORD=yes bitnami/redis:latest
  ```
- 
+## Visit Grafana at external_IP:3000 and setup prometheus and cAdvisor dashboard 
+
+1.First add data source, select prometheus and enter the **URL: http://external_ip:9090**. Change **HTTP method to GET** and press **Save and Test**.
+2.To add a dashboard, go to import -> 893 (dashboard ID) -> Load -> Select Prometheus as data source.
+3.You can also use a different dashboard Id e.g., to inspect redis through redis_exporter (e.g., use 763)
+
 
