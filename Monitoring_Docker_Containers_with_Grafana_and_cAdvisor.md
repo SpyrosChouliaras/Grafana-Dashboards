@@ -64,6 +64,12 @@ services:
     - 6379:6379
 ```
 
+To run the installation:
+
+```sh
+docker-compose up
+```
+
 2) Deploy Grafana container:
 
 ```sh
