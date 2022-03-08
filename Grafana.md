@@ -66,7 +66,22 @@ See step-by-step installation under **Prometheus** repository
 
 ## Use prometheus for monitoring 
 
-Deploy redis exporter with docker
+Setting up Redis Exporter:
+
+Download github repo:
+
+```sh
+wget https://github.com/oliver006/redis_exporter/releases/download/v1.18.0/redis_exporter-v1.18.0.linux-amd64.tar.gz
+```
+
+Unzip the tarball and cd into the directory:
+
+``sh
+tar xvfz redis_exporter-v1.18.0.linux-amd64.tar.gz
+cd redis_exporter-v1.18.0.linux-amd64
+``
+
+Finally, run the exporter:
 
 ```sh
 ./redis_exporter -redis.addr redis://172.17.0.2:6379
