@@ -76,10 +76,14 @@ docker-compose up
 sudo docker run -p 6380:6380 --name redis-ycsb -e ALLOW_EMPTY_PASSWORD=yes bitnami/redis:latest
 ```
 
-3.Target redis-ycsb with redis_exporter (install and download 
+3.Target redis-ycsb with redis_exporter (download and install redis_exporter). To find the port of redis-ycsb container run the following commnad:
 
 ```sh
-./redis_exporter -redis.addr redis://172.17.0.2:6379 -include-system-metrics=true
+sudo docker inspect -f '{{range.NetworkSettings.Networks}}{{.IPAddress}}{{end}}' container_name_or_id
+```
+
+```sh
+./redis_exporter -redis.addr redis://redis-ycsb-port:6379 -include-system-metrics=true
 ```
 
 4.Deploy Grafana container:
