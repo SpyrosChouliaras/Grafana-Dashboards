@@ -27,7 +27,9 @@ scrape_configs:
 ```
 
 
-This will add exporters (e.g., redis_exporter) and cAdvisor.
+This will add exporters (e.g., redis_exporter) and cAdvisor. You can see cAdvisor metrics at http://external_ip:8080. Remember that you need to set firewall rules to export GCP ports.
+
+To see Prometheus targets or graphs visit http://external_ip:9090/graphs and http://external_ip:9090/targets respectively.
 
 For the docker-compose.yml:
 
