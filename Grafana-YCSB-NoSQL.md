@@ -140,7 +140,11 @@ sudo docker run -m=4G-p 6379:6379 --name redis -e ALLOW_EMPTY_PASSWORD=yes bitna
 sudo docker update -m=1024M [ContainerID]
 ```
 
+**To flash Redis Memory run the following command:**
 
+```sh
+sudo docker exec -it redis-ycsb redis-cli flushall
+```
 
 
 
