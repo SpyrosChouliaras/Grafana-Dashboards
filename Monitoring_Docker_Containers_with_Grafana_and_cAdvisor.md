@@ -110,3 +110,8 @@ sudo docker run -p 3000:3000 --name=grafana -e "GF_INSTALL_PLUGINS=redis-app" gr
 3.You can also use a different dashboard Id e.g., to inspect redis through redis_exporter (e.g., use 763)
 
 
+Add your own panels with custom queries, e.g., container memory usage percentage:
+
+```sh
+sum(container_memory_rss{name=~".+"}) by (name) /sum(container_spec_memory_limit_bytes{name=~".+"}) by (name) * 100
+```
