@@ -72,7 +72,7 @@ To run the installation:
 docker-compose up
 ```
 
-2. Deploy Redis container. This Redis instance will be used to load/run YCSB workload.
+2.Deploy Redis container. This Redis instance will be used to load/run YCSB workload.
 
 ```sh
 sudo docker run -p 6380:6380 --name redis-ycsb -e ALLOW_EMPTY_PASSWORD=yes bitnami/redis:latest
