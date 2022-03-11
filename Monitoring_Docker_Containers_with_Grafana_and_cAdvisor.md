@@ -75,7 +75,7 @@ docker-compose up
 2.Deploy Redis container. This Redis instance will be used to load/run YCSB workload.
 
 ```sh
-sudo docker run -p 6380:6380 --name redis-ycsb -e ALLOW_EMPTY_PASSWORD=yes bitnami/redis:latest
+sudo docker run -p 6380:6380 -m=8GB --name redis-ycsb -e ALLOW_EMPTY_PASSWORD=yes bitnami/redis:latest
 ```
  
 3.Target redis-ycsb with redis_exporter (download and install redis_exporter). To find the port of redis-ycsb container run the following commnad:
