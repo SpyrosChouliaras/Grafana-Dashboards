@@ -95,6 +95,20 @@ Then run:
 ```sh
 sudo docker run -p 3000:3000 --name=grafana -e "GF_INSTALL_PLUGINS=redis-app" grafana/grafana
 ```
+
+5. To update the memory use the update command
+
+```sh
+sudo docker update -m=1024M [ContainerID]
+```
+
+6. To allow access to specific CPU cores (e.g., for accesing cores 0 and 1) use the command below:
+
+```sh
+sudo docker update --cpuset-cpus 0,1 redis-ycsb
+```
+
+
 ## Install YCSB to benchmark Redis and MongoDB 
 
 See step-by-step installation under **Prometheus** repository
