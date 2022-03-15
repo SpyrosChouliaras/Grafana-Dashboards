@@ -140,6 +140,12 @@ sudo docker run -m=4G-p 6379:6379 --name redis -e ALLOW_EMPTY_PASSWORD=yes bitna
 sudo docker update -m=1024M [ContainerID]
 ```
 
+7) Or allow access to specific cores. See the example for accesing cores 0 and 1 below:
+
+```sh
+sudo docker update --cpuset-cpus 0,1 redis-ycsb
+```
+
 **To flash Redis Memory run the following command:**
 
 ```sh
