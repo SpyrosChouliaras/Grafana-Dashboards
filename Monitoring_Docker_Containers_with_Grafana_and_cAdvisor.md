@@ -108,6 +108,7 @@ sudo docker update -m=1024M [ContainerID]
 sudo docker update --cpuset-cpus 0,1 redis-ycsb
 ```
 
+**Allocated memory and CPU cores per container can be easily seen via cAdvisor UI at http://external_IP:8080 
 
 ## Install YCSB to benchmark Redis and MongoDB 
 
