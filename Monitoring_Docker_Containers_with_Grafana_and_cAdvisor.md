@@ -87,7 +87,7 @@ sudo docker inspect -f '{{range.NetworkSettings.Networks}}{{.IPAddress}}{{end}}'
 Then run:
 
 ```sh
-./redis_exporter -redis.addr redis://redis-ycsb-port:6379 -include-system-metrics=true
+./redis_exporter -redis.addr redis://redis-ycsb-host:6379 -include-system-metrics=true
 ```
 
 4.Deploy Grafana container:
@@ -95,7 +95,23 @@ Then run:
 ```sh
 sudo docker run -p 3000:3000 --name=grafana -e "GF_INSTALL_PLUGINS=redis-app" grafana/grafana
 ```
+## Install YCSB to benchmark Redis and MongoDB 
 
+See step-by-step installation under **Prometheus** repository
+
+## Load and Run YCSB workload 
+
+
+## On Redis
+
+```sh
+./bin/ycsb load redis -s -P workloads/workloada -p "redis.host=redis-ycsb-host" -p "redis.port=6379" > outputLoad.txt
+```
+
+
+```sh
+./bin/ycsb run redis -s -P workloads/workloada -p "redis.host=redis-ycsb-host" -p "redis.port=6379" -p status.interval=1 > outputRun.txt
+```
 
 ## Visit Grafana at external_IP:3000 and setup prometheus and cAdvisor dashboard 
 
