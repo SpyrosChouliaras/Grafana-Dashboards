@@ -104,7 +104,10 @@ Go to add panel, and in Metrics Browser add :  **irate (redis_cpu_user_seconds_t
 
 Save the dashboard to apply changes
 
-# Scale Redis container resources using docker cgroups
+# Scale Redis container resources using docker cgroups: Resolve the warning below:
+
+WARNING: Your kernel does not support swap limit capabilities or the cgroup is not mounted. Memory limited without 
+swap
 
 1) Log into the Ubuntu or Debian host as a user with sudo privileges.
 
