@@ -82,7 +82,7 @@ tar xvfz redis_exporter-v1.18.0.linux-amd64.tar.gz
 cd redis_exporter-v1.18.0.linux-amd64
 ```
 
-Finally, run the exporter (Hint: use the redis system IP obtained on a previous step):
+Finally, run the exporter (use redis IP address obtained on a previous step):
 
 ```sh
 ./redis_exporter -redis.addr redis://172.17.0.2:6379
