@@ -166,4 +166,4 @@ To report/plot the total CPU consumption (e.g., between 2 cores):
 Reduce row, 
 Field name : Time, + queries
 
-**Calculation** : Total
+Calculation : Total
