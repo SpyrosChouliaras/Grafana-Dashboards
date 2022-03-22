@@ -1,4 +1,4 @@
-# Monitoring docker containers with aAdvisor and Grafana
+# Monitoring docker containers with cAdvisor and Grafana
 
 
 1.First create a prometheus.yml and docker-compose.yml files. Edit the files as follows:
