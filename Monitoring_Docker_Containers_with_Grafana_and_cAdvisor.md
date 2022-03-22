@@ -140,3 +140,26 @@ Add your own panels with custom queries, e.g., container memory usage percentage
 ```sh
 sum(container_memory_rss{name=~".+"}) by (name) /sum(container_spec_memory_limit_bytes{name=~".+"}) by (name) * 100
 ```
+
+# CPU cores dashboard - Monitor CPU cores based on docker core allocation
+
+**Dashboard ID** : 13734
+
+To query all cores:
+
+```sh
+clamp_max((sum by (cpu) ( (clamp_max(irate(node_cpu_seconds_total{instance="$host",mode!="idle",mode!="iowait"}[5s]),1)) )),1)
+```
+
+To query specific cores:
+
+```sh
+sum(irate(node_cpu_seconds_total{cpu="0",instance="$host",mode!="idle",mode!="iowait"}[5s]))
+```
+
+To report/plot the total CPU consumption (e.g., between 2 cores):
+
+**Transform** -> Outer join (field name : Time)
+
+**Add field from calculation** : Reduce row, Field name Time, + queries
+**Calculation** : Total
