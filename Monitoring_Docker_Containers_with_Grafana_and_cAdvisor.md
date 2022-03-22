@@ -161,5 +161,9 @@ To report/plot the total CPU consumption (e.g., between 2 cores):
 
 **Transform** -> Outer join (field name : Time)
 
-**Add field from calculation** : Reduce row, Field name Time, + queries
+**Add field from calculation** : 
+
+Reduce row, 
+Field name : Time, + queries
+
 **Calculation** : Total
