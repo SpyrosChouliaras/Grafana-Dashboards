@@ -146,7 +146,7 @@ sudo docker update -m=1024M [ContainerID]
 7) Or allow access to specific cores. See the example for accesing cores 0 and 1 below:
 
 ```sh
-sudo docker update --cpuset-cpus 0,1 redis-ycsb
+sudo docker update --cpuset-cpus=0,1 redis-ycsb
 ```
 
 **To flash Redis Memory run the following command:**
