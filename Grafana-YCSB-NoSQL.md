@@ -133,7 +133,7 @@ sudo reboot
 5) Finally deploy your redis container and specify memory limit:
 
 ```sh
-sudo docker run -m=4G-p 6379:6379 --name redis -e ALLOW_EMPTY_PASSWORD=yes bitnami/redis:latest
+sudo docker run -m=4G --cpuset-cpus=0 -p 6379:6379 --name redis -e ALLOW_EMPTY_PASSWORD=yes bitnami/redis:latest
 
 ```
 
