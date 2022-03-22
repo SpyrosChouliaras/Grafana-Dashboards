@@ -22,7 +22,7 @@ Inspect the IP address of the Redis system
 sudo docker inspect -f '{{range.NetworkSettings.Networks}}{{.IPAddress}}{{end}}' container_name_or_id
 ```
 
-Use the IP addrees to on the **Redis Application** plugin to monitor Redis database.
+Use the IP addrees on the **Redis Application** plugin to monitor Redis database.
 
 e.g., **Address : 172.17.0.3:6379**
 
